@@ -42,8 +42,8 @@ public class Cursos {
     @JoinColumn(name = "cursos_id")
     private List<Requerimientos> requerimientos = new ArrayList<>();
 
-    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
-    @JoinColumn(name = "cursos_id")
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(name = "cursos_prerequisitos", joinColumns = @JoinColumn(name = "pre_requisitos_id", referencedColumnName = "id"), inverseJoinColumns = @JoinColumn(name = "cursos_id", referencedColumnName = "id"))
     private List<PreRequisitos> preRequisitos = new ArrayList<>();
 
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)

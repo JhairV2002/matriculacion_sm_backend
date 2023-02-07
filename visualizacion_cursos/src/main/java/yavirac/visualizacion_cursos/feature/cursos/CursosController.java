@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("visualizacion_cursos")
+@RequestMapping("api/cursos")
 @CrossOrigin({ "*" })
 public class CursosController {
     @Autowired

@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("visualizacion_carrera_cursos")
+@RequestMapping("api/carreras")
 @CrossOrigin({ "*" })
 public class CarrerasController {
     @Autowired
