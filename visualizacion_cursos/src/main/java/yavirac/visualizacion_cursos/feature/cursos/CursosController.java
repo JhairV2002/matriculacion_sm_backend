@@ -21,6 +21,11 @@ public class CursosController {
         return cursosService.findAll();
     }
 
+    @GetMapping("/{id}/")
+    public Cursos findById(@PathVariable Long id) {
+        return cursosService.findById(id);
+    }
+
     @GetMapping("/findByName/{term}/")
     public List<Cursos> findByName(@PathVariable String term) {
         return cursosService.findByName(term);
