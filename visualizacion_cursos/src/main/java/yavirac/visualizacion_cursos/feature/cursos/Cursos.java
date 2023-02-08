@@ -1,5 +1,6 @@
 package yavirac.visualizacion_cursos.feature.cursos;
 
+import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,7 +30,9 @@ public class Cursos {
     private boolean gratis;
     private Integer cupos;
     private String estado;
-    private String duracion;
+    // private String duracion;
+    private Date fechaInicio;
+    private Date fechaFin;
     private String descripcion;
     private String fotoUrl;
     // relacion de muchos a muchos con instructores
