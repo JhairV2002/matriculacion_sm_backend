@@ -16,7 +16,7 @@ public class CarrerasController {
     @Autowired
     CarrerasService carrerasService;
 
-    @GetMapping("/")
+    @GetMapping("/all/")
     public List<Carreras> findAll() {
         return carrerasService.findAll();
     }
