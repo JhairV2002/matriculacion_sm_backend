@@ -1,4 +1,4 @@
-package yavirac.visualizacion_cursos.feature.cursos;
+package yavirac.visualizacion_cursos.feature.estudiantes;
 
 import java.util.List;
 
@@ -12,30 +12,25 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("api/cursos")
-@CrossOrigin({ "*" })
-public class CursosController {
+@RequestMapping("api/estudiantes")
+@CrossOrigin({"*"})
+public class EstudiantesController {
     @Autowired
-    CursosService cursosService;
+    EstudiantesServices estudiantesServices;
 
     @GetMapping("/")
-    public List<Cursos> findAll() {
-        return cursosService.findAll();
+    public List<Estudiantes> findAll () {
+        return estudiantesServices.findAll();
     }
 
     @GetMapping("/{id}/")
-    public Cursos findById(@PathVariable Long id) {
-        return cursosService.findById(id);
-    }
-
-    @GetMapping("/findByName/{term}/")
-    public List<Cursos> findByName(@PathVariable String term) {
-        return cursosService.findByName(term);
+    public Estudiantes findById(@PathVariable Long id) {
+        return estudiantesServices.findById(id);
     }
 
     @PutMapping("/update/")
-    public Cursos update(@RequestBody Cursos cursos)
-    {
-        return cursosService.save(cursos);
+    public Estudiantes updateEstudiantes(@RequestBody Estudiantes estudiantes){
+        return estudiantesServices.saveEstudiantes(estudiantes);
     }
+    
 }

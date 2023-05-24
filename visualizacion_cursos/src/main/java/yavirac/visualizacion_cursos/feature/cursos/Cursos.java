@@ -15,6 +15,7 @@ import jakarta.persistence.ManyToMany;
 import jakarta.persistence.OneToMany;
 import lombok.Data;
 import yavirac.visualizacion_cursos.feature.contenido.Contenido;
+import yavirac.visualizacion_cursos.feature.estudiantes.Estudiantes;
 import yavirac.visualizacion_cursos.feature.horarios.Horarios;
 import yavirac.visualizacion_cursos.feature.instructores.Instructores;
 import yavirac.visualizacion_cursos.feature.prerequisitos.PreRequisitos;
@@ -35,6 +36,10 @@ public class Cursos {
     private Date fechaFin;
     private String descripcion;
     private String fotoUrl;
+
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(name = "cursos_estudiantes", joinColumns = @JoinColumn(name= "estudiantes_id", referencedColumnName = "id"), inverseJoinColumns = @JoinColumn(name= "cursos_id", referencedColumnName = "id"))
+    private List<Estudiantes> estudiantes = new ArrayList<>();
     // relacion de muchos a muchos con instructores
 
     @ManyToMany(cascade = CascadeType.ALL)
